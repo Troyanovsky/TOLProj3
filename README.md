@@ -6,6 +6,11 @@ The code essentially does the following:
 3. Generate new questions based on the student responses in Step 2, along with the corresponding feedback.
 4. Store the generate problem set in to a .txt file.
 
+# GitHub Repo and Prototype Website:
+GitHub Repo: https://github.com/Troyanovsky/TOLProj3
+
+Prototype Website: https://troyanovsky.github.io/TOLProj3/
+
 # How are correct answers selected?
 The criteria for selecting correct answers are as below:
 1. **Correction of the multiple-choice or select-all-that-apply questions.** We first picked out the student responses with a full-mark on the corresponding multiple-choice or select-all-that-apply questions because there is a strong correlation between the correction of the choices and of the free responses.
