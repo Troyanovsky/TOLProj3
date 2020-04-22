@@ -1,5 +1,5 @@
 # Overview
-The following code snippet is used for generating the questions for the new quiz.
+The tolProj3.py python code is used for generating the questions for the new quiz.
 The code essentially does the following:
 1. Clean up the questions data and answers data (e.g. trim unnecessary texts for question types, pick relevant data tags etc.) and store them in dictionaries for later use.
 2. Identify correct and incorrect student responses (Details to follow in the next section).
