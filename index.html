@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data-driven Quiz</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:300">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><span>Data-driven</span> Quiz</h1>
+      </header>
+
+      <main>
+        <div id="board">
+          <div id="scene-start" class="scene">
+            <div class="icon">
+              <i class="far fa-file-alt"></i>
+            </div>
+            <h2>Welcome! </h2>
+            <p> Let's do a quiz to test your knowledge! </p>
+            <a class="btn-continue" onclick = "showQuestion()"><i class="fas fa-play-circle"></i>Start</a>
+          </div>
+          <div id="scene-end" class="scene">
+            <div class="icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+            <h2>Congratulations!!!</h2>
+            <p>You have completed the quiz.<br> Optionally, you can retake the quiz if you want.You have totally 3 chances! </p>
+            <div class="actions">
+              <a class="btn-retake"><i class="fas fa-arrow-circle-right"></i>Retake</a>
+            </div>
+          </div>
+
+          <!--  version1 -->
+          <div id="scene-question-1" class="scene scene-question">
+            <h2>Question 1</h2>
+            <p>Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-1">
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>A. Even without deliberate practice, Rajeev could improve his skill by practice. If his skill doesn't improve at all, that is not a problem of deliberate practice, it's a problem that he didn't practice the same skill every day. He is not practicing a specific skill (draw the eye of the portrait). Although the lack of feedback is also important, it's more important to focus on the same practice)</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-1">
+                <p>B. Rajeev is not improving because he is not undergoing deliberate practice. He is drawing alone, which means that one of the conditions of deliberate practice is not being met: he is not being supervised by a teacher to diagnose errors.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>C. The task of creating a portrait is a complex one and should be studied step by step rather than in full. Hence, Rajeev should identify what parts of the portrait are problematic and practice them regularly instead of drawing new full portrait every day. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>D. it's not deliberate practice</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next="#scene-wrong-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-1" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-1" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-2" class="scene scene-question">
+            <h2>Question 2</h2>
+            <p>Dan wants to improve his golf game. Every day, he practices one golf stroke for an hour, and records his practice session on video. After his practice, he watches the recording, and plans on what changes to make the next day. Assume he has no other golf instruction. Is Dan engaged in deliberate practice? Why?</p>
+            <h6>Choose all that applies.</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-2">
+              <div class="frame option" data-next="#scene-correct-2">
+                <p>A. It is. Because it includes practice on a specific skill, supervised by himself, get feedback from himself, and remedial training the next day.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2">
+                <p>B. No, because deliberate practice requires that an external agent provide feedback to the learner.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2">
+                <p>C. The feedback needs to be given by an external agent </p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2">
+                <p>D. No, he needs external agent to give informative feedback, as he may be "unskilled and unaware of it". Also he needs to receive informative feedback and practise again in a loop which he can not do in the described way.</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-3" class="scene scene-question">
+            <h2>Question 3</h2>
+            <p>Mark is learning to play the guitar. After long hours of practice, he mastered playing his favorite song. Write one growth-mindset building feedback his instructor could give him.</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-3">
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>A. Amazing job! Great persistent on your learning.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>B. Remind him of long term goals, and the growth that is still possible and how his current achievement reflects that. Basically tell him how great he's done and tell him he's going to continue to better in the future.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-3">
+                <p>C. You did an excellent job maintaining the right rhythm throughout this song. You've grown tremendously in your skills over the past few days. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>D. You have improved a lot! </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm </p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm</p>
+            <a class="btn-continue" data-next="#scene-question-4"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-4" class="scene scene-question">
+            <h2>Question 4</h2>
+            <p>: Many teachers who have used Jigsaw report that students start to see themselves in a different light -- as more competent, likable, and positive contributors to the classroom. Does the Jigsaw method create a growth-intelligence mindset?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-4">
+              <div class="frame option" data-next="#scene-wrong-4">
+                <p>A. According to the reading, Carlos changed his mindset because his groupmates think he was someone they could work with and someone they could appreciate.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4">
+                <p>B. I think it does. Especially for those low-achieving students, Jigsaw enables them to learn from other members (in the expert group as well as Jigsaw group), knowing that they could also learn as well as their peers. Also, as Jigsaw team will rely on one another to learn that part of knowledge, each person will feel that they are making contributions. </p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-4">
+                <p>C. No, because usually, students don't realize why it works </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4">
+                <p>D. Yes, students are encouraged to learn , express, they are seeing others rely on themselves and see themselves improve. </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-4" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-4" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <!-- version 2 -->
+          <div id="scene-question-1-2" class="scene scene-question">
+            <h2>Question 1</h2>
+            <p>Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-1-2">
+              <div class="frame option" data-next="#scene-wrong-1-2">
+                <p>A. Even without deliberate practice, Rajeev could improve his skill by practice. If his skill doesn't improve at all, that is not a problem of deliberate practice, it's a problem that he didn't practice the same skill every day. He is not practicing a specific skill (draw the eye of the portrait). Although the lack of feedback is also important, it's more important to focus on the same practice)</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-1-2">
+                <p>B. Rajeev is not improving because he is not undergoing deliberate practice. He is drawing alone, which means that one of the conditions of deliberate practice is not being met: he is not being supervised by a teacher to diagnose errors.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1-2">
+                <p>C. The task of creating a portrait is a complex one and should be studied step by step rather than in full. Hence, Rajeev should identify what parts of the portrait are problematic and practice them regularly instead of drawing new full portrait every day. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1-2">
+                <p>D. it's not deliberate practice</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next="#scene-wrong-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-1-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-1-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+
+          <div id="scene-question-2-2" class="scene scene-question">
+            <h2>Question 2</h2>
+            <p>Dan wants to improve his golf game. Every day, he practices one golf stroke for an hour, and records his practice session on video. After his practice, he watches the recording, and plans on what changes to make the next day. Assume he has no other golf instruction. Is Dan engaged in deliberate practice? Why?</p>
+            <h6>Choose all that applies.</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-2-2">
+              <div class="frame option" data-next="#scene-correct-2-2">
+                <p>A. No because, he is lacking (1) explicit instructions about the best method (2) supervised by a teacher to diagnose erorrs because he s diagnosing them himself and (3) immediate feedback as he watched the videos at the end of the day and gives himself feedback </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2-2">
+                <p>B.Yes, he has isolated a specific task, practices it repeatedly and reviews his sessions to narrow on improvements.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2-2">
+                <p>C. No, Dan is not engaged in deliberate practice because he is nothing supervised by a teacher to diagnose errors. This is an element of the definition of deliberate practice. </p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2-2">
+                <p>D.It is. Because it includes practice on a specific skill, supervised by himself, get feedback from himself, and remedial training the next day.</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-2-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-2-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-3-2" class="scene scene-question">
+            <h2>Question 3</h2>
+            <p>Mark is learning to play the guitar. After long hours of practice, he mastered playing his favorite song. Write one growth-mindset building feedback his instructor could give him.</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-3-2">
+              <div class="frame option" data-next="#scene-wrong-3-2">
+                <p>A. What a great job that you achieved the goal of playing your favorite song. It is also great for your persistence of learning and practicing.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3-2">
+                <p>B. Remind him of long term goals, and the growth that is still possible and how his current achievement reflects that. Basically tell him how great he's done and tell him he's going to continue to better in the future.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-3-2">
+                <p>C.You did an excellent job maintaining the right rhythm throughout this song. You've grown tremendously in your skills over the past few days. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3-2">
+                <p>D. You have improved a lot! </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-3-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm </p>
+            <a class="btn-continue" data-next="#scene-question-4-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-3-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm</p>
+            <a class="btn-continue" data-next="#scene-question-4-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+
+          <div id="scene-question-4-2" class="scene scene-question">
+            <h2>Question 4</h2>
+            <p>: Many teachers who have used Jigsaw report that students start to see themselves in a different light -- as more competent, likable, and positive contributors to the classroom. Does the Jigsaw method create a growth-intelligence mindset?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-4-2">
+              <div class="frame option" data-next="#scene-wrong-4-2">
+                <p>A.Yes, for example carlos, have developed a growth-mindset, while he thought he was stupid he later think he is smart.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4-2">
+                <p>B. I think it does. Especially for those low-achieving students, Jigsaw enables them to learn from other members (in the expert group as well as Jigsaw group), knowing that they could also learn as well as their peers. Also, as Jigsaw team will rely on one another to learn that part of knowledge, each person will feel that they are making contributions.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-4-2">
+                <p>C. No, because usually, students don't realize why it works </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4-2">
+                <p>D. Yes, because the Jigsaw methods let even the low-achieving students become expert and help other students. These students will feel they could also achieve better score if they work hard. </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-4-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-4-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <!-- version 3 -->
+          <div id="scene-question-1-3" class="scene scene-question">
+            <h2>Question 1</h2>
+            <p>Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-1-3">
+              <div class="frame option" data-next="#scene-wrong-1-3">
+                <p>A. Even without deliberate practice, Rajeev could improve his skill by practice. If his skill doesn't improve at all, that is not a problem of deliberate practice, it's a problem that he didn't practice the same skill every day. He is not practicing a specific skill (draw the eye of the portrait). Although the lack of feedback is also important, it's more important to focus on the same practice)</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-1-3">
+                <p>B. Rajeev needs expert feedback in order to identify his mistakes and how to correct them.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1-3">
+                <p>C. lack of deliberate practice, to say, always practice a general and broad task set without pinpointing where exactly is not good. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1-3">
+                <p>D. it's not deliberate practice</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next="#scene-wrong-1-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-1-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-1-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait</p>
+            <a class="btn-continue" data-next="#scene-question-2-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+
+          <div id="scene-question-2-3" class="scene scene-question">
+            <h2>Question 2</h2>
+            <p>Dan wants to improve his golf game. Every day, he practices one golf stroke for an hour, and records his practice session on video. After his practice, he watches the recording, and plans on what changes to make the next day. Assume he has no other golf instruction. Is Dan engaged in deliberate practice? Why?</p>
+            <h6>Choose all that applies.</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-2-3">
+              <div class="frame option" data-next="#scene-correct-2-3">
+                <p>A.Dan is not engaged in deliberate practice because he is missing expert feedback. He may be unable to precisely diagnose his mistakes and/or to formulate an optimal plan to address them without supervision. Additionally waiting until the next day to address problems undermines his ability to relate errors to corrections and further removes his routine from deliberate practice.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2-3">
+                <p>B.Yes, he has isolated a specific task, practices it repeatedly and reviews his sessions to narrow on improvements.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2-3">
+                <p>C. No, Dan is not engaged in deliberate practice because he is nothing supervised by a teacher to diagnose errors. This is an element of the definition of deliberate practice. </p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-2-3">
+                <p>D.It is. Because it includes practice on a specific skill, supervised by himself, get feedback from himself, and remedial training the next day.</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-2-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-2-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because he is not getting task feedback from an external agent No, because he is not able to practice corrections immediately (he must wait till the next day)</p>
+            <a class="btn-continue" data-next="#scene-question-3-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-3-3" class="scene scene-question">
+            <h2>Question 3</h2>
+            <p>Mark is learning to play the guitar. After long hours of practice, he mastered playing his favorite song. Write one growth-mindset building feedback his instructor could give him.</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-3-3">
+              <div class="frame option" data-next="#scene-wrong-3-3">
+                <p>A. What a great job that you achieved the goal of playing your favorite song. It is also great for your persistence of learning and practicing.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3-3">
+                <p>B. Remind him of long term goals, and the growth that is still possible and how his current achievement reflects that. Basically tell him how great he's done and tell him he's going to continue to better in the future.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-3-3">
+                <p>C.Great, you are doing well on this song because of your hard practice. You could do better on other songs and more complex skills if you continue to practice like this. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3-3">
+                <p>D. Amazing job! Great persistent on your learning. </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-3-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm </p>
+            <a class="btn-continue" data-next="scene-question-4-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-3-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> Great persistent on your learning Well done keeping the right rhythm</p>
+            <a class="btn-continue" data-next="#scene-question-4-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+
+          <div id="scene-question-4-3" class="scene scene-question">
+            <h2>Question 4</h2>
+            <p>: Many teachers who have used Jigsaw report that students start to see themselves in a different light -- as more competent, likable, and positive contributors to the classroom. Does the Jigsaw method create a growth-intelligence mindset?</p>
+            <h6>Choose 1 correct answer</h6>
+            <div class="gallery gallery-v select" data-target="#scene-question-4-3">
+              <div class="frame option" data-next="#scene-wrong-4-3">
+                <p>A.Yes, students are encouraged to learn , express, they are seeing others rely on themselves and see themselves improve. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4-3">
+                <p>B. I think so. Because Jigsaw demonstrates to students that they can always learn from other people. What's more, it shows that they can not only learn themselves, but also help other people to improve together.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-4-3">
+                <p>C. It doesn't show the students that they can grow their skill set by working on them, by practicing them. </p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-4-3">
+                <p>D. Yes, because the Jigsaw methods let even the low-achieving students become expert and help other students. These students will feel they could also achieve better score if they work hard. </p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-4-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-4-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p> No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+        </div>
+      </main>
+
+      <footer>
+        <p class="copyright">&copy; 2020. A Work Crafted by Shujing Lin, Guodong Zhao &amp; Junhui Yao </p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
