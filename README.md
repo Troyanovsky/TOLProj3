@@ -15,6 +15,10 @@ GitHub Repo: https://github.com/Troyanovsky/TOLProj3
 
 Prototype Website: https://troyanovsky.github.io/TOLProj3/
 
+Google Colab Notebook for Generating Questions: https://colab.research.google.com/drive/1iP7fF8tfMaIy-FEb2C_Ey4EakGh_Oufc
+
+Google Colab Notebook for Validation: https://colab.research.google.com/drive/1Jbv2exs_w2xFJtJRaG6E0yj-wo6rwzun
+
 # How are correct answers selected?
 The criteria for selecting correct answers are as below:
 1. **Correction of the multiple-choice or select-all-that-apply questions.** We first picked out the student responses with a full-mark on the corresponding multiple-choice or select-all-that-apply questions because there is a strong correlation between the correction of the choices and of the free responses.
