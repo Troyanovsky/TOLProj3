@@ -1,4 +1,8 @@
 # Overview
+This repo is created for Tools for Online Learning Project 3 at Carnegie Mellon University. The goal of the project is to utilize learnersoucring for creating a set of quiz questions based on students' responses.
+
+The project team members are: Guodong Zhao, Junhui Yao, and Shujing Lin. Guodong was responsible for creating the problem generation code; Junhui was responsible for providing learning theory support and writeup; Shujing was responsible for creating the prototype website based on the generated quiz problem sets.
+
 The tolProj3.py python code is used for generating the questions for the new quiz.
 The code essentially does the following:
 1. Clean up the questions data and answers data (e.g. trim unnecessary texts for question types, pick relevant data tags etc.) and store them in dictionaries for later use.
