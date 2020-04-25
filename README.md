@@ -67,5 +67,5 @@ Since the dataset was small for the development set, I had to make compromises w
 With these future improvements, the robustness and reliability of the generated problem sets will be improved.
 
 # Reference
-*McKendree, J. (1990). Effective feedback content for tutoring complex skills.Human-Computer Interaction, 5(4), 381-413. doi:10.1207/s15327051hci0504_2
-*https://github.com/PolarisChen/tol-quiz
+* McKendree, J. (1990). Effective feedback content for tutoring complex skills.Human-Computer Interaction, 5(4), 381-413. doi:10.1207/s15327051hci0504_2
+* https://github.com/PolarisChen/tol-quiz
