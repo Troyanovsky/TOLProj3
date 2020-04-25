@@ -10,6 +10,8 @@ The code essentially does the following:
 3. Generate new questions based on the student responses in Step 2, along with the corresponding feedback.
 4. Store the generate problem set in to a .txt file.
 
+The prototype website was adapted from https://github.com/PolarisChen/tol-quiz. The questions generated from the aforementioned code is copied and pasted into the prototype for the interactive quiz. 
+
 # GitHub Repo and Prototype Website:
 GitHub Repo: https://github.com/Troyanovsky/TOLProj3
 
@@ -65,4 +67,5 @@ Since the dataset was small for the development set, I had to make compromises w
 With these future improvements, the robustness and reliability of the generated problem sets will be improved.
 
 # Reference
-McKendree, J. (1990). Effective feedback content for tutoring complex skills.Human-Computer Interaction, 5(4), 381-413. doi:10.1207/s15327051hci0504_2
+*McKendree, J. (1990). Effective feedback content for tutoring complex skills.Human-Computer Interaction, 5(4), 381-413. doi:10.1207/s15327051hci0504_2
+*https://github.com/PolarisChen/tol-quiz
